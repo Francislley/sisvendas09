@@ -74,8 +74,9 @@ class clientes(models.Model):
 class venda(models.Model):
     numero_venda = models.CharField(max_length=20)
     data = models.DateField(auto_now_add=True)
-    cliente = models.ForeignKey('clientes')
-    vendedor = models.ForeignKey('funcionario')
+    cliente = models.ManyToManyField('clientes')
+    vendedor = models.ManyToManyField('funcionario')
+
     class Meta:
         ordering = ['numero_venda']
         verbose_name = 'Venda'
