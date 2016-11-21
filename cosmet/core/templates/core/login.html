@@ -1,9 +1,9 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-<link href="{% static 'https://fonts.googleapis.com/css?family=Shrikhand' %}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +13,7 @@
     <title>Creative - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
@@ -35,9 +35,9 @@
 
 </head>
 
-<body id="page-top" style=" background-color: #741168; ">
+<body id="page-top" style=" background-image: url(img/fundo.jpg); ">
 
-    <nav id="nav" class="navbar navbar-default navbar-fixed-top" style="background-color: #A19692">
+    <nav id="nav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -52,14 +52,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 
                 
-                
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a i="nav1" class="page-scroll" href="index.html">Pagina Inicial</a>
-                    </li>
-                   
-                    
-                </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -70,16 +63,15 @@
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
-                        <div class="panel-title">Sign In</div>
-                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
+                        <div class="panel-title">Login COSMET</div>
                     </div>     
 
                     <div style="padding-top:30px" class="panel-body" >
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
-                        <form id="loginform" class="form-horizontal" role="form">
-                                    
+                        <form method="POST" id="loginform" class="form-horizontal" role="form">
+                            {% csrf_token %}
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                         <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Nome">                                        
@@ -96,8 +88,8 @@
                                     <!-- Button -->
 
                                     <div class="col-sm-12 controls">
-                                      <a id="btn-login" href="#" class="btn btn-success">Login  </a>
-                                      <p id="logo" >COSMET</p>
+                                      <button class="btn btn-primary btn-lg btn-block">Entrar</button>
+
 
                                     </div>
                                 </div>

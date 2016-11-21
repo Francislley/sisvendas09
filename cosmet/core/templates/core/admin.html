@@ -32,7 +32,7 @@
                           
                       </div>
                       <div class="inbox-body">
-                          <a href="#myModal" data-toggle="modal"  title="Compose"    class="btn btn-compose">
+                          <a href="../../admin/core/venda/add/" data-toggle="modal"  title="Compose"    class="btn btn-compose">
                               Efetuar Venda
                           </a>
                           <!-- Modal -->
@@ -88,36 +88,26 @@
                       </div>
                       <ul class="inbox-nav inbox-divider">
                           <li class="active">
-                              <a href=""><i class="fa fa-plus"></i> Cadastrar Clientes</span></a>
+                              <a href="../../admin/core/clientes/"><i class="fa fa-plus"></i> Cadastrar Clientes</span></a>
 
                           </li>
                          	<li class="active">
-                              <a href="#"><i class="fa fa-plus"></i> Cadastrar Produtos</span></a>
+                              <a href="../../admin/core/produto/"><i class="fa fa-plus"></i> Cadastrar Produtos</span></a>
 
                           </li>
                           <li class="active">
-                              <a href="#"><i class="fa fa-plus"></i> Cadastrar Fornecedores</a>
+                              <a href="../../admin/core/fornecedor/"><i class="fa fa-plus"></i> Cadastrar Fornecedores</a>
                           </li>
                           <li class="active">
-                              <a href="#"><i class=" fa fa-search"></i> Consultar Clientes </a>
+                              <a href="../../admin/core/clientes/"><i class=" fa fa-search"></i> Consultar Clientes </a>
                           </li>
                           <li class="active">
-                              <a href="#"><i class=" fa fa-search"></i> Consultar Vendas</a>
+                              <a href="../../admin/core/venda/"><i class=" fa fa-search"></i> Consultar Vendas</a>
                           </li>
                           <li class="active">
-                              <a href="#"><i class=" fa fa-search"></i> Consultar Produtos</a>
+                              <a href="../../admin/core/produto/"><i class=" fa fa-search"></i> Consultar Produtos</a>
                           </li>
                       </ul>
-                      <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
-                          <li> <h4>Labels</h4> </li>
-                          <li> <a href="#"> <i class=" fa fa-sign-blank text-danger"></i> Work </a> </li>
-                          <li> <a href="#"> <i class=" fa fa-sign-blank text-success"></i> Design </a> </li>
-                          <li> <a href="#"> <i class=" fa fa-sign-blank text-info "></i> Family </a>
-                          </li><li> <a href="#"> <i class=" fa fa-sign-blank text-warning "></i> Friends </a>
-                          </li><li> <a href="#"> <i class=" fa fa-sign-blank text-primary "></i> Office </a>
-                          </li>
-                      </ul>
-                      
 
                       <div class="inbox-body text-center">
                           <div class="btn-group">
@@ -141,11 +131,11 @@
                   <aside class="lg-side">
                       <div class="inbox-head">
                           <h3></h3>
-                          <form action="#" class="pull-right position">
+                          <div action="#" class="pull-right position">
                               <div class="input-append">
-                                  <button class="btn sr-btn" type="button">SAIR <i class="glyphicon glyphicon-off"></i></button>
+                                  <a href="{% url 'logout' %}">Sair</a>
                               </div>
-                          </form>
+                          </div>
                       </div>
                       <div class="inbox-body">
                          
@@ -157,69 +147,12 @@
 </div>
 
 <!--RODAPÉ-->
-<footer> 
-  
-  
+<footer>
 
-                <div id="">
-                <ul class="">
-                    <li>
-                        <a i="nav1" class="page-scroll" href="#about">Sobre</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Produtos</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contato</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#local">Nos Encontrar</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="login.html">Entrar</a>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div id="menurodape">
-                <ul class="">
-                    <li>
-                        <a i="nav1" class="page-scroll" style="color: white" href="#about">Desenvolvido Com:</a>
-                    </li>
-                    <li>
-                        <a i="nav1" class="page-scroll" href="#about">Boostrap</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Django</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">HTML</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">CSS</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#local">Python</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="https://github.com/pcego/cosmet.git" target="_blank">GIT (acesse o repositorio)</a>
-                    </li>
-                </ul>
-            </div>
-            
-
-
-            <p>Copyright - Developed by: Alunos da FASA Faculdades Santo Agostinho - Sistemas de Informação - 4º periodo</p>
+    <p>Copyright - Developed by: Alunos da FASA Faculdades Santo Agostinho - Sistemas de Informação - 4º periodo</p>
 
   
   </footer>
-
-
-
 
 
 </body>
