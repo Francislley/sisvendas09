@@ -5,20 +5,22 @@ from cosmet.core.models import fornecedor, produto, funcionario, \
 
 class fornecedorAdmin(admin.ModelAdmin):
     list_display = ('id', 'nome')
+    list_display_links = ('id', 'nome')
     list_filter = ('nome', )
 
 admin.site.register(fornecedor, fornecedorAdmin)
 
 
 class produtoAdmin(admin.ModelAdmin):
-    list_display = ('id', 'preco', 'codBarra', 'marca', 'descricao', 'fornecedor')
+    list_display = ('id', 'preco', 'codBarra', 'marca', 'descricao', 'fornecedor', 'estoque_entrada', 'estoque')
+    list_display_links = ('id', 'preco', 'codBarra', 'marca', 'descricao', 'fornecedor')
     list_filter = ('id', 'descricao')
 
 admin.site.register(produto, produtoAdmin)
 
-
 class cargoAdmin(admin.ModelAdmin):
     list_display = ('id', 'nome', 'salario', 'horario_entrada', 'horario_saida')
+    list_display_links = ('id', 'nome', 'salario', 'horario_entrada', 'horario_saida')
     list_filter = ('id', 'nome')
 
 admin.site.register(cargo, cargoAdmin)
@@ -26,6 +28,7 @@ admin.site.register(cargo, cargoAdmin)
 
 class funcionarioAdmin(admin.ModelAdmin):
     list_display = ('id', 'nome', 'cpf', 'idade', 'cargo')
+    list_display_links = ('id', 'nome', 'cpf', 'idade', 'cargo')
     list_filter = ('id', 'nome', 'cpf')
 
 admin.site.register(funcionario, funcionarioAdmin)
@@ -33,6 +36,7 @@ admin.site.register(funcionario, funcionarioAdmin)
 
 class clientesAdmin(admin.ModelAdmin):
     list_display = ('id', 'cpf', 'nome', 'endereco', 'estado', 'cidade', 'telefone', 'dataCadastro')
+    list_display_links = ('id', 'cpf', 'nome', 'endereco', 'estado', 'cidade', 'telefone', 'dataCadastro')
     list_filter = ('id', 'cpf', 'nome')
 
 admin.site.register(clientes, clientesAdmin)
@@ -48,6 +52,7 @@ class vendaAdmin(admin.ModelAdmin):
 
     inlines = [ProdutoVendaAdminInline]
     list_display = ('id', 'numero_venda', 'data', 'cliente', 'vendedor', 'valor_total_venda')
+    list_display_links = ('id', 'numero_venda', 'data', 'cliente', 'vendedor', 'valor_total_venda')
     list_filter = ('id', 'numero_venda')
 
 
@@ -72,6 +77,7 @@ admin.site.register(venda, vendaAdmin)
 class produto_VendaAdmin(admin.ModelAdmin):
 
     list_display = ('id', 'produto', 'quantidade', 'venda', 'subtotal')
+    list_display_links = ('id', 'produto', 'quantidade', 'venda', 'subtotal')
     list_filter = ('id', 'venda')
 
 

@@ -18,7 +18,7 @@
 
 </head>
 
-<body id="page"> 
+<body id="page" style="">
 
         <div class="container" >
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
@@ -29,7 +29,7 @@
                           <div class="user-name">
                               <span><a href="#">cosmet@email.com</a></span>
                           </div>
-                          
+
                       </div>
                       <div class="inbox-body">
                           <a href="../../admin/core/venda/add/" data-toggle="modal"  title="Compose"    class="btn btn-compose">
@@ -107,6 +107,9 @@
                           <li class="active">
                               <a href="../../admin/core/produto/"><i class=" fa fa-search"></i> Consultar Produtos</a>
                           </li>
+                          <li class="active">
+                              <a href="../../admin/core/funcionario/"><i class="glyphicon glyphicon-cog"></i> Gerenciar Funcionarios</a>
+                          </li>
                       </ul>
 
                       <div class="inbox-body text-center">
@@ -132,16 +135,16 @@
                       <div class="inbox-head">
                           <h3></h3>
                           <div action="#" class="pull-right position">
-                              <div class="input-append">
-                                  <a href="{% url 'logout' %}">Sair</a>
+                              <div   class="input-append">
+                                    <button type="button" class="btn btn-danger"><a style="color:white" href="{% url 'logout' %}">Sair</a></button>
+
+
+                              </div>
+
                               </div>
                           </div>
-                      </div>
-                      <div class="inbox-body">
-                         
-                    </div>
-                          
-                      </div>
+
+
                   </aside>
               </div>
 </div>

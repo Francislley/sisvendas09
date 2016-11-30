@@ -10,3 +10,6 @@ def home(request):
     # se o usuário não fez login o django renderiza
     # o arquivo que exibe a página de login
     return redirect('login')
+
+def index(request):
+    return render(request, 'core/index.html')

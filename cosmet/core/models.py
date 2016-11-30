@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.db.models import Sum
 
 class fornecedor(models.Model):
 
@@ -21,7 +21,7 @@ class produto(models.Model):
     marca = models.CharField('Marca', max_length=50)
     descricao = models.CharField('Descrição', max_length=100)
     fornecedor = models.ForeignKey('fornecedor')
-
+    estoque_entrada = models.IntegerField('Estoque de entrada', null=False)
 
     class Meta:
         ordering = ['descricao']
@@ -31,6 +31,20 @@ class produto(models.Model):
 
     def __str__(self):
         return self.descricao
+
+    def estoque(self):
+
+        entradas = produto.objects.filter(pk=self.pk).aggregate(Sum('estoque_entrada'))
+        vendas = produto_Venda.objects.filter(produto=self).aggregate(Sum('quantidade'))
+
+
+        if entradas.get('estoque_entrada__sum') == 0:
+            return 'Estoque Não Cadastrado'
+        elif vendas.get('quantidade__sum') == None:
+            return entradas.get('estoque_entrada__sum')
+        else:
+            return entradas.get('estoque_entrada__sum') - vendas.get('quantidade__sum')
+
 
 class cargo(models.Model):
 
@@ -102,7 +116,7 @@ class venda(models.Model):
 class produto_Venda(models.Model):
 
     produto = models.ForeignKey('produto', verbose_name='Produto')
-    quantidade = models.IntegerField('Quantidade')
+    quantidade = models.IntegerField('Quantidade', null=False)
     venda = models.ForeignKey('venda', verbose_name='Número da Venda')
 
 
@@ -110,3 +124,4 @@ class produto_Venda(models.Model):
         ordering = ['produto']
         verbose_name = 'Produto Venda'
         verbose_name_plural = 'Produtos Venda'
+
